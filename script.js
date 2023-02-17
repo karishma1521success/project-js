@@ -7,11 +7,6 @@ let arr = [
 ];
 
 
-
-
-
-
-
 function PrintStudentswithMap() {
   //Write your code here , just console.log
   arr.map(function (obj){
@@ -41,10 +36,12 @@ function addData() {
 function removeFailedStudent() {
   //Write your code here, just console.log
   arr.forEach(function (obj,index){
-    if(obj.marks < 50){
+    if(obj.marks <= 50){
         arr.splice(index,1);
     }
   });
+
+  console.log(arr);
  
 }
 
