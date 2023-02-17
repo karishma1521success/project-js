@@ -6,54 +6,57 @@ let arr = [
   { id: 3, name: "karen", age: "19", marks: 35 },
 ];
 
- arr.map(PrintStudentswithMap);
- arr.forEach(PrintStudentsbyForEach);
- addData(arr);
- removeFailedStudent(arr);
- concatenateArray(arr);
 
 
 
-function PrintStudentswithMap(mapArr) {
+
+
+
+function PrintStudentswithMap() {
   //Write your code here , just console.log
-  if(mapArr.marks > 50){
-    console.log(mapArr.name);
-  }
+  arr.map(function (obj){
+    if(obj.marks > 50){
+      console.log(obj.name);
+    }
+  });
+ 
 }
 
-function PrintStudentsbyForEach(forArr) {
+function PrintStudentsbyForEach() {
   //Write your code here , just console.log
-  if(forArr.marks > 50){
-      console.log(forArr.name);
-  }
+   arr.forEach((obj) => {
+    if(obj.marks > 50){
+      console.log(obj.name);
+    }
+  });
 }
 
-function addData(arr) {
+function addData() {
   //Write your code here, just console.log
-  let obj = {id:4,name:"susan",age:"20",marks:45};
-  arr.push(obj);
+  let student = { id: 4, name: "karishma", age: "20", marks: 55 }
+  arr.push(student);
   console.log(arr);
 }
 
-function removeFailedStudent(arr) {
+function removeFailedStudent() {
   //Write your code here, just console.log
-  for(let i=0; i<arr.length; i++){
-      if(arr[i].marks < 50){
-          arr.splice(i);
-      }
-  }
-  console.log(arr);
+  arr.forEach(function (obj,index){
+    if(obj.marks < 50){
+        arr.splice(index,1);
+    }
+  });
+ 
 }
 
-function concatenateArray(arr) {
+function concatenateArray() {
   //Write your code here, just console.log
   let arr1 = [
-      { id: 4, name: "ram", age: "9", marks: 99 },
-      { id: 5, name: "shyam", age: "8", marks: 98 },
-      { id: 6, name: "karan", age: "7", marks: 97 },
+    { id: 4, name: "johny jack", age: "18", marks: 80 },
+    { id: 5, name: "shicn chen", age: "20", marks: 81 },
+    { id: 6, name: "shizuka", age: "19", marks: 51 },
   ];
 
-   let concatArr = arr.concat(arr1);
-  console.log(concatArr);
-  
+  let result = arr.concat(arr1);
+  console.log(result);
 }
+
