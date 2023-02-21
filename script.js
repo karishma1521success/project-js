@@ -28,22 +28,24 @@ function PrintStudentsbyForEach() {
 
 function addData() {
   //Write your code here, just console.log
-  let student = { id: 4, name: "karishma", age: "20", marks: 55 }
+  let student = { id: 4, name: "karishma", age: "20", marks: 30}
   arr.push(student);
   console.log(arr);
 }
 
 function removeFailedStudent() {
   //Write your code here, just console.log
-  arr.forEach(function (obj,index){
-    if(obj.marks <= 50){
-        arr.splice(index,1);
-    }
-  });
-
-  console.log(arr);
- 
+  // for(let i=0; i<arr.length; i++){
+  //   if(arr[i].marks < 50){
+  //     arr.splice(i,1);
+  //   }
+  // } this method will not work becuase splice method remove the element directly it will effect length and the index of objects
+  
+  //so the correct answer is using filter method
+  let arr1 = arr.filter(function(student){return student.marks >50});  //here I create new array and add that object which having the marks greater than 50 means new array will not consist those student which got failed
+  console.log(arr1);
 }
+
 
 function concatenateArray() {
   //Write your code here, just console.log
